@@ -7,7 +7,6 @@ import data from "./Assets/Data.json";
 import "./App.css";
 
 const App = () => {
-
   const [control, setControl] = useState({
     value: "",
     style: "",
@@ -22,11 +21,19 @@ const App = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-  
+
   const onSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const data_value = Object.fromEntries(data.entries());
+    e.target.reset();
+    setControl({
+      value: "",
+      style: "",
+      icon: "",
+      active: false,
+      disabled: false,
+    });
     return setControls((prev) => [
       ...prev,
       {
@@ -40,7 +47,6 @@ const App = () => {
 
   return (
     <div className="container">
-
       <form onSubmit={onSubmit}>
         <div className="form__group">
           <label htmlFor="" className="form__group__title">
@@ -74,8 +80,14 @@ const App = () => {
             Icon
           </label>
           <div className="form__group__body">
-            <input list="icon" onChange={handleChange} name="icon" autoComplete="off" placeholder="Chose Icon..."/>
-            <datalist id="icon" >
+            <input
+              list="icon"
+              onChange={handleChange}
+              name="icon"
+              autoComplete="off"
+              placeholder="Chose Icon..."
+            />
+            <datalist id="icon">
               {data.icon.map((item) => (
                 <option key={item} value={item} />
               ))}
@@ -113,7 +125,7 @@ const App = () => {
             <i className="bi bi-lightning-charge-fill"></i>
             Create
           </button>
-          <input type="number" name="nbr" id="nbr" placeholder="N°" min={0}/>
+          <input type="number" name="nbr" id="nbr" placeholder="N°" min={0} />
           <label htmlFor="nbr" className="form__group__title">
             Button(s)
           </label>
@@ -150,7 +162,6 @@ const App = () => {
             : "no element"}
         </div>
       </div>
-
     </div>
   );
 };

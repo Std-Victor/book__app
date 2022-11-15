@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+.container {
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 50px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form,
+.result__example,
+.result__collection {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form,
+.result__example {
+  gap: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form{
+  padding: 0;
+  justify-content: space-between;
+}
+
+.result__example,
+.result__collection {
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.result__collection {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  overflow: hidden;
+}
+
+.form__group {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.form__group__title {
+  padding: 10px 15px;
+  background-color: #dbdbdb;
+}
+
+.form__group__body input,
+.form__group__body select{
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+  width: 150px;
+  font-size: 0.9rem;
+}
+
+.form__group__body input::placeholder {
+  font-size: 1rem;
+}
+
+.form__group__status {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form__group input[name="nbr"] {
+  width: 100px;
+  padding: 10px 5px 10px 15px;
+  border: none;
+  outline: none;
+}
+
+.action__create,
+button {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #616161;
+  border-radius: 3px;
+}
+
+.btn {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.action__create {
+  border: none;
+  border-radius: 0px;
+}
+
+i {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.collection__title,
+.collection__count {
+  width: 100%;
+  background-color: #e4e4e4;
+  padding: 10px;
+}
+.collection__result {
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.collection__result div {
+  display: flex;
+  gap: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active {
+  box-shadow: #32325d40 0px 30px 60px -12px inset,
+    #0000004d 0px 18px 36px -18px inset;
 }
+

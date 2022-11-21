@@ -126,3 +126,35 @@ i {
     #0000004d 0px 18px 36px -18px inset;
 }
 
+.stagiaire__table table{
+  width: 500px;
+  border-collapse: collapse;
+}
+
+th, td, tr{
+  border: 1px solid;
+}
+
+td, th{
+  padding: 2px 15px;
+}
+
+table tr td:nth-child(2){
+  width: 120px;
+}
+
+.container__{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.stagiaire__table thead{
+  background-color: #e41a1a;
+  color: white;
+}
+.stagiaire__table thead th td{
+  padding: 8px 15px;
+}
